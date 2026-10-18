@@ -44,7 +44,7 @@ const projects = [
     id: 'raws-game',
     title: 'Red Alert: Weeks of Survival',
     description:
-      'A strategy game where players manage resources and survive waves of enemies. Sample project: replace it with one of your own.',
+      'A top-down survival RPG built in Unity where players prepare for a natural disaster, manage resources, craft tools, and make critical decisions to survive.',
     image: rawsImg,
     tags: ['Unity', 'C#'],
     github: 'https://github.com/lili-iv0/RAWS',

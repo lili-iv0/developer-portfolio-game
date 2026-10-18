@@ -7,7 +7,7 @@ const profile = {
   email: 'leeann.robles1804@gmail.com',
   github: 'https://github.com/lili-iv0',
   linkedin: 'https://www.linkedin.com/in/liyan-robles',
-  resumeUrl: 'https://drive.google.com/file/d/12EileBVbLPDpoFpRtyczZ4x7jjh8Jo9N/view?usp=sharing', // e.g. '/resume.pdf' (put the file in the /public folder). Leave empty to hide the button.
+  resumeUrl: 'https://drive.google.com/file/d/1DfXWc6tl2g2oXMn8s9G_F9F4tzf74uUm/view?usp=sharing', // e.g. '/resume.pdf' (put the file in the /public folder). Leave empty to hide the button.
 
   formspreeId: 'https://formspree.io/f/xdeajdpe',
 
