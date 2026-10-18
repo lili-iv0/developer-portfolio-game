@@ -1,0 +1,45 @@
+import { useMemo, useState } from 'react';
+import ProjectCard from '../components/ProjectCard';
+import SectionTitle from '../components/SectionTitle';
+import usePageTitle from '../hooks/usePageTitle';
+import projects from '../data/projects';
+
+export default function Projects() {
+  usePageTitle('Projects');
+  const [active, setActive] = useState('All');
+
+  const tags = useMemo(() => ['All', ...new Set(projects.flatMap((p) => p.tags))], []);
+  const visible = active === 'All' ? projects : projects.filter((p) => p.tags.includes(active));
+
+  return (
+    <div className="container section">
+      <SectionTitle kicker="All projects" title="Stage select">
+        Filter by technology. Each project links to its source code and, where available, a live demo.
+      </SectionTitle>
+
+      <div className="filters" role="group" aria-label="Filter projects by tech">
+        {tags.map((t) => (
+          <button
+            key={t}
+            type="button"
+            className={`chip ${active === t ? 'active' : ''}`}
+            aria-pressed={active === t}
+            onClick={() => setActive(t)}
+          >
+            {t}
+          </button>
+        ))}
+      </div>
+
+      {visible.length ? (
+        <div className="project-grid">
+          {visible.map((p, i) => (
+            <ProjectCard key={p.id} project={p} index={i} />
+          ))}
+        </div>
+      ) : (
+        <p className="empty">No projects use {active} yet. Add one in src/data/projects.js.</p>
+      )}
+    </div>
+  );
+}

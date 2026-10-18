@@ -1,0 +1,96 @@
+/* ---------- Header: nav + HUD ---------- */
+.navbar {
+  position: sticky; top: 0; z-index: 20;
+  background: var(--bg); border-bottom: 4px solid var(--edge);
+}
+.navbar-inner { display: flex; align-items: center; gap: 1rem; min-height: 68px; }
+
+.brand {
+  display: inline-flex; align-items: center; gap: 0.75rem; margin-right: auto;
+  font-family: var(--font-pixel); font-weight: 700; font-size: 1.35rem; letter-spacing: 0.02em;
+  color: var(--ink); text-decoration: none;
+}
+.brand-mark {
+  display: inline-grid; place-items: center; min-width: 40px; height: 32px; padding: 0 0.4rem;
+  font-size: 1.1rem; background: var(--accent); color: var(--accent-fg);
+  box-shadow: 0 -3px 0 0 var(--accent-dk), 0 3px 0 0 var(--accent-dk), -3px 0 0 0 var(--accent-dk), 3px 0 0 0 var(--accent-dk);
+  margin: 3px;
+}
+
+.nav-links { display: flex; gap: 0.25rem; }
+.nav-links a {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--font-pixel); font-weight: 600; font-size: 1.2rem; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--muted); text-decoration: none; padding: 0.5rem 0.8rem;
+}
+.nav-links a::before {
+  content: ''; width: 0.6em; height: 0.8em; background: var(--accent); opacity: 0;
+  clip-path: polygon(0 0, 33% 0, 33% 20%, 66% 20%, 66% 40%, 100% 40%, 100% 60%, 66% 60%, 66% 80%, 33% 80%, 33% 100%, 0 100%);
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-links a:hover::before, .nav-links a.active::before { opacity: 1; }
+.nav-links a.active { color: var(--accent); }
+[data-theme='light'] .nav-links a.active { color: var(--accent); }
+
+.nav-actions { display: flex; align-items: center; gap: 0.5rem; }
+.nav-toggle { display: none; }
+
+.hud { background: var(--bg-soft); border-top: 4px solid var(--shadow); }
+.hud-inner { display: flex; align-items: center; gap: 0.5rem 1.75rem; min-height: 40px; padding-block: 0.3rem; }
+.hud-item { display: inline-flex; align-items: center; gap: 0.5rem; }
+.hud-label { font-family: var(--font-pixel); font-weight: 600; font-size: 1.05rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.hud-num { font-family: var(--font-pixel); font-weight: 600; font-size: 1.15rem; color: var(--ink); }
+.hearts { display: inline-flex; gap: 4px; }
+.hud-xp { flex: 1; max-width: 420px; margin-left: auto; }
+.xp-bar {
+  flex: 1; height: 16px; background: var(--code-bg); border: 3px solid var(--edge); padding: 2px; min-width: 70px;
+}
+.xp-fill {
+  height: 100%; transition: width 0.5s steps(10);
+  background: repeating-linear-gradient(90deg, var(--green) 0 8px, transparent 8px 10px);
+}
+.hud-xp-num { min-width: 4.5ch; text-align: right; }
+
+@media (max-width: 780px) {
+  .nav-toggle { display: inline-grid; }
+  .nav-links {
+    display: none; position: absolute; left: 0; right: 0; top: 100%;
+    flex-direction: column; gap: 0.15rem;
+    background: var(--bg); border-bottom: 4px solid var(--edge);
+    padding: 0.5rem 1.25rem 1rem;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 0.8rem 0.5rem; font-size: 1.3rem; }
+  .brand-name { font-size: 1.15rem; }
+  .hud-label:not(.hud-xp .hud-label) { display: none; }
+  .hud-xp-num { display: none; }
+  .sfx { display: none; }
+}
+@media (max-width: 420px) { .brand-mark { display: none; } }
+
+/* ---------- Footer ---------- */
+.footer { margin-top: 3rem; background: var(--bg-soft); border-top: 4px solid var(--edge); }
+.footer-inner {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 1rem 2rem; padding-block: 1.75rem;
+}
+.footer-copy { margin: 0; display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; font-size: 0.95rem; color: var(--muted); }
+.footer-links { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 1.5rem; }
+.footer-links a {
+  font-family: var(--font-pixel); font-weight: 600; font-size: 1.15rem; letter-spacing: 0.05em; text-transform: uppercase;
+  color: var(--muted); text-decoration: none;
+}
+.footer-links a:hover { color: var(--accent); }
+
+/* ---------- Achievement toasts ---------- */
+.toasts { position: fixed; right: 1.25rem; bottom: 1.5rem; z-index: 150; display: grid; gap: 1.25rem; width: min(340px, calc(100% - 2.5rem)); pointer-events: none; }
+.toast {
+  display: flex; align-items: flex-start; gap: 0.9rem; padding: 0.9rem 1rem;
+  background: var(--card); --pc: var(--accent);
+  animation: toast-in 0.4s steps(6) both;
+}
+.toast p { margin: 0; }
+.toast-kicker { font-family: var(--font-pixel); font-size: 0.95rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--violet); line-height: 1.2; }
+.toast-title { font-family: var(--font-pixel); font-weight: 700; font-size: 1.4rem; color: var(--accent); line-height: 1.2; margin: 0.15rem 0 0.2rem; }
+.toast-text { font-size: 0.9rem; line-height: 1.45; color: var(--ink); }
+@keyframes toast-in { from { transform: translateX(120%); } to { transform: none; } }
