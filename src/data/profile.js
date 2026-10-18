@@ -9,7 +9,7 @@ const profile = {
   linkedin: 'https://www.linkedin.com/in/liyan-robles',
   resumeUrl: 'https://drive.google.com/file/d/12EileBVbLPDpoFpRtyczZ4x7jjh8Jo9N/view?usp=sharing', // e.g. '/resume.pdf' (put the file in the /public folder). Leave empty to hide the button.
 
-  formspreeId: '',
+  formspreeId: 'https://formspree.io/f/xdeajdpe',
 
   stack: ['React', 'Javascript','Supabase'],
 
