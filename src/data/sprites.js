@@ -1,5 +1,3 @@
-// Pixel art used around the site. Each map is rows of characters; each character
-// is a colour from its palette ('.' = empty). Edit or add your own sprites here.
 import avatarImg from '../assets/avatar.png';
 
 export const avatar = {

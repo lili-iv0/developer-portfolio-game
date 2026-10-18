@@ -1,7 +1,6 @@
 import PixelSprite from './PixelSprite';
 import { TOTAL_COINS, useGame } from '../game/GameContext';
 
-// Game-style status bar: lives, coins and an XP bar that fills as people explore.
 export default function Hud() {
   const { coins, xp, level } = useGame();
 

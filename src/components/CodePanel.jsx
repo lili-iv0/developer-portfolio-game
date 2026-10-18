@@ -1,6 +1,5 @@
 import profile from '../data/profile';
 
-// A small, readable "developer.js" panel built from profile.js, so it never goes out of date.
 export default function CodePanel() {
   const open = profile.now.some((n) => n.open);
 

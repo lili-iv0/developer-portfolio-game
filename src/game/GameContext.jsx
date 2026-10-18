@@ -1,12 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-// =========================================================
-// Game layer: coins, XP, achievements and optional sound.
-// Progress is saved in the visitor's browser (localStorage).
-// Edit ACHIEVEMENTS to change the toasts; TOTAL_COINS must match
-// the number of coins placed in src/components/Scene.jsx.
-// =========================================================
 const KEY = 'portfolio-game-v1';
 export const TOTAL_COINS = 5;
 
@@ -31,7 +25,6 @@ function load() {
   }
 }
 
-// ----- tiny 8-bit sound effects (WebAudio, no files needed) -----
 let audio;
 const SFX = { coin: [988, 1319], ach: [523, 659, 784, 1047], click: [330] };
 function beep(name) {

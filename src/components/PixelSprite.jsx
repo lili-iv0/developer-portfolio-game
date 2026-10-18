@@ -1,7 +1,5 @@
 import { sprites } from '../data/sprites';
 
-// Draws a pixel sprite as crisp SVG. Use <PixelSprite name="coin" size={4} />
-// (size = screen pixels per sprite pixel) or pass your own map + palette.
 export default function PixelSprite({ name, map, palette, size = 4, label, className = '' }) {
   const sprite = name ? sprites[name] : { map, palette };
   const rows = sprite.map;
