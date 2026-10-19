@@ -2,6 +2,7 @@ import facilityImg from '../assets/facility.jpeg';
 import floodImg from '../assets/flood.png';
 import wordBudImg from '../assets/wordBud.png';
 import rawsImg from '../assets/RAWS.jpeg';
+import trackerImg from '../assets/tracker.jpeg';
 
 const projects = [
   {
@@ -51,6 +52,18 @@ const projects = [
     demo: 'https://drive.google.com/file/d/1RtKDQIEYtiZxizNgxFo4dRZUe2Gn6Gek/view?usp=drive_link',
     website: '',
     featured: false,
+  },
+  {
+    id: 'fitness-tracker',
+    title: 'Fitness Tracker',
+    description:
+      ' A web app for tracking student fitness progress, with progress charts for students and a class dashboard for teachers.',
+    image: trackerImg,
+    tags: ['PHP', 'mySQL', 'FileZilla', 'JavaScript', 'CSS', 'Chart.js'],
+    github: 'https://github.com/lili-iv0/web-project',
+    demo: '',
+    website: 'https://fitness-tracker.infinityfreeapp.com/',
+    featured: true,
   },
 ];
 
