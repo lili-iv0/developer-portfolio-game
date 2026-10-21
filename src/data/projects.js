@@ -26,7 +26,7 @@ const projects = [
     tags: ['React', 'Vite', 'HTML', 'CSS', 'JavaScript', 'Supabase', 'PWA'],
     github: '',
     demo: 'https://drive.google.com/file/d/1nmIBaMVuypTYcgm3FGesTclhwCNN0KBB/view?usp=sharing',
-    website: 'https://alab-ready.pages.dev/',
+    website: '',
     featured: true,
   },
   {
